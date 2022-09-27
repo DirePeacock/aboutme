@@ -1,0 +1,12 @@
+{
+    "firstname": "Dire",
+    "lastname": "Peacock",
+    "email": "dire.d.peacock@gmail.com",
+    "aboutme": "lorem ipsum something something somewhere oh well whatever nevermind",
+    "locale": "Big Texas",
+    "things": "",
+    "links": {
+        "twitter": "https://twitter.com/DirePeacock",
+        "github": "https://github.com/DirePeacock"
+    }
+}
