@@ -22,7 +22,6 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-
         <div className="App-Body">
           {/* <Navbar /> */}
           <img src={boat} alt="icon" />
@@ -31,13 +30,15 @@ class App extends React.Component {
           <Vandal5 data={this.state.data} />
           <EngineVe data={this.state.data} />
           <Resume data={this.state.data} />
-          <Snippet data={this.state.data} />
-
-
+          {/* <Snippet data={this.state.data} /> */}
         </div>
-
       </div>
     );
   }
 }
+// <AboutMe data={this.state.data} />
+// <Vandal5 data={this.state.data} />
+// <EngineVe data={this.state.data} />
+// <Resume data={this.state.data} />
+// <Snippet data={this.state.data} />
 export default App;

@@ -22,6 +22,11 @@
 
 }
 
+pre {
+  text-align:left;
+  width:100%;
+}
+
 .App {
   text-align: center;
   font-family: Consolas, monospace;
@@ -73,26 +78,38 @@
   text-align: left;
   width: 80%;
   font-size: large;
+  word-wrap: normal;
+}
+
+.SectionText
+{
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  overflow: visible;
 }
 
 .App-link {
   color: var(--blue);
 }
 
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  margin: auto;
-
-  color: var(--foreground);
-
-  padding: 0.7rem 2rem;
-
+.CodePreview {
+  object-position: inherit;
+  width: 80%;
+  font-size: 2vmin;
+  line-height: 1.05;
 }
 
 #YoutubeDemo {
   width: 720px;
   height: 430px;
+  margin: 10px 0px 10px 0px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+  color: var(--foreground);
+  padding: 0.7rem 2rem;
 }
