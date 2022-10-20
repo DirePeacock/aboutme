@@ -1,41 +1,20 @@
-:root {
-  /* part vscode defaults part monokai */
-  --background: #1e1e1e;
-  --menubackground: #252526;
-  --headerbackground: #3c3c3c;
-  --leftbar: #333333;
-  --linecolor: #414141;
-  --graytext: #8c8c8c;
-  --foreground: #D4D4D4;
-  --comment: #6A9955;
-  --seagreen: #0BB052;
-  --green: #A6E22E;
-  --lightorange: #E69F66;
-  --orange: #FD971F;
-  --red: #F92672;
-  --magenta: #B00B69;
-  --purple: #c586c0;
-  --lightblue: #9cdcfe;
-  --blue: #569CD6;
-  --teal: #3ac9a2;
-  --string: #CE9178;
-  --yellow: #ffb517;
-  --brightyellow: #e5e510;  
-}
 .App {
-  /* position: relative; */
-  background-color: var(--leftbar);
+  background-color: var(--menubackground);
   display: flex;
   flex-direction: column;
   text-align: center;
   font-family: Consolas, monospace;
   font-size: calc(11px + 0.5vmin);
-  color: var(--foreground);
-  
+  color: var(--foreground);  
+}
+
+#toptext
+{
+  padding: 8px 0px 0px 0px
 }
 
 #icon {
-  margin: 3px 3px 4px 4px;
+  margin: 5px 3px 2px 4px;
   position: flex;
   left:0px;
   align-self: flex-start;
@@ -45,42 +24,106 @@
   align-content: flex-start;
   display: flex;
   flex-direction: row;
+  text-align: left;
+  vertical-align: middle;
   background-color: var(--headerbackground);
 }
+
 .AppMain {
   display: flex;
   flex-direction: row;
   
 }
 
-.comment {
+.SideBar
+{
+  padding-right: 0.5vmin;
+  border-top: 1px solid var(--linecolor);
+  background-color: var(--menubackground);
+  display: flex;
+  top: 0px;
+  flex-direction: row;
+  position: sticky;
+  width:16%;
+  max-width: 220px;
+  height: 100vmax;
+}
+
+a:link {
+  color: var(--blue);
+}
+a:visited {
+ color: var(--purple);
+}
+
+.LinksBar {
+  border-left: 1.5vmin solid var(--leftbar);
+  
+  height: 100%;
+  width:100%;
+  position:sticky;
+  display: flex;
+  flex-direction: row;
+}
+.AllLinks {
+  background-color: var(--menubackground);
+  padding-left: 0.5vmin;
+  width: 100%;
+  height: 100%;
+  font-weight: bold;
+  align-content: right;
+  right: 0px;
+  text-align: right;
+
+}
+
+.LeftBar
+{
+  width: 20%;
+  height: 100%;
+  background-color: var(--leftbar);
+  display:block;
+  align-items: center;
+  align-content: center;
+  text-align: center;
+  justify-content: center;
+}
+
+#LinksLabel {
+  transform: rotate(-90deg) ;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  align-content: center;
+  text-align: center;
+  justify-content: center;
+}
+
+.Comment {
   color: var(--comment);
 }
 
 .AppSection {
+  margin-left: 2vmin;
+  padding-bottom: 10px;
   width: 95%;
   border-left: 1px solid var(--linecolor);
 }
 
-.SideBar
-{
-  background-color: var(--leftbar);
-  position: sticky;
-  width:10%;
-  height: 100vmax;
-}
 
 .AppBody {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  align-items: left;
+  justify-content: flex-start;
   background-color: var(--background);
   width:90%;
   top: 0px;
   right:0px;
 }
-
+.FileSymbol {
+  font-weight: bold;
+}
 .TabSubtitle div {
   margin: 0px 1vmin 0px 1vmin;
   width: fit-content;
@@ -88,19 +131,15 @@
   flex-direction: row;
 }
 .TabTopRow div {
-  margin: 1px 1vmin 1px 1vmin;
+  margin: 5px 10px 5px 10px;
   display: flex;
   flex-direction: row;
   
 }
 
-.FileSymbol
-{
-  padding: 0px 0vmin 0px 0px;
-  /* color: var(--blue); */
-}
+
 .TabTopRow {
-  padding: 0px 3vmin 0px 1vmin ;
+  padding: 0px 1vmin 0px 1vmin ;
   width:fit-content;
   display: flex;
   flex-direction: row;
@@ -126,9 +165,9 @@
   text-align: left;
   width: 100%;
 }
+
 .SectionBody {
   padding: 0px 0px 4vmin 2vmin;
-
   text-align: left;
   width: 95%;
   word-wrap: normal;
@@ -139,6 +178,7 @@
   white-space: pre-wrap;
   word-wrap: break-word;
   overflow: visible;
+  text-align: left;
 }
 
 .Minimize {
@@ -150,6 +190,7 @@
   outline: none;
   color: var(--foreground);
 }
+
 .Minimize:hover {
   background-color: var(--leftbar);
   border-radius: 19%;  
@@ -162,7 +203,6 @@
 .CodePreview {
   object-position: inherit;
   width: 80%;
-  /* font-size: 2vmin; */
   line-height: 1.05;
   border-radius: 2vmin;
 }
@@ -173,39 +213,11 @@
   margin: 10px 0px 10px 0px;
 }
 
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: auto;
-  color: var(--foreground);
-  padding: 0.7rem 2rem;
-}
-
-#Tower {
-  /* background-color: var(--background); */
-  text-align: unset;
-  position: Absolute;
-  top: 0px;
-  left: 0px;
-  height: 100%;
-  width: auto;
-  z-index: -1;
-  background-color: var(--blue);
-}
-
-
-#Tower img {
-  position: sticky;
-  height: 100%;
-  width: 256px;
-  
-}
 pre {
   text-align:left;
   width:100%;
-  
 }
+
 .Snippet {
   background-color: var(--background);
   color: var(--foreground);
@@ -213,16 +225,31 @@ pre {
   width: 100%;
 }
 
-/* unused? */
-.SectionTitle {
-  margin: 3vmin 0px 2vmin 0px;
-  background-color: var(--background);
-  color: var(--graytext);
+p {
+  margin: 0px;
 }
 
-.SectionSubtitle {
-  color: var(--string);
-  background-color: var(--background);
-  width:100%;
-  margin: 2vmin 0px 2vmin 0px
+:root {
+  /* part vscode defaults part monokai */
+  --background: #1E1E1E;
+  --blue: #569CD6;
+  --brightyellow: #E5E510;  
+  --comment: #6A9955;
+  --foreground: #D4D4D4;
+  --graytext: #8C8C8C;
+  --green: #A6E22E;
+  --headerbackground: #3C3C3C;
+  --leftbar: #333333;
+  --lightblue: #9CDCFe;
+  --lightorange: #E69F66;
+  --linecolor: #414141;
+  --magenta: #B00B69;
+  --menubackground: #252526;
+  --orange: #FD971F;
+  --purple: #C586C0;
+  --red: #F92672;
+  --seagreen: #0BB052;
+  --string: #CE9178;
+  --teal: #3AC9A2;
+  --yellow: #FFB517;
 }

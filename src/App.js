@@ -16,47 +16,84 @@ class App extends React.Component {
     super(props);
     this.state = {
       data: personalvars,
-      resumedata: resumedata
+      resumedata: resumedata,
+      showaboutme: true,
+      showresume: true,
+      showxtra: true,
+      showvandal5: true,
+      showengineve: true,
+      
     };
+    this.toggleComponent = this.toggleComponent.bind(this);
   }
+  toggleComponent(name) {
+    console.log(name)
+    switch(name) {
+      case "showaboutme":
+        this.setState({showaboutme: !this.state.showaboutme});
+        break;
+      case "showresume":
+        this.setState({showresume: !this.state.showresume});
+        break;
+      case "showxtra":
+        this.setState({showxtra: !this.state.showxtra});
+        console.log(this.state.showxtra)
+        break;
+      case "showvandal5":
+        this.setState({showvandal5: !this.state.showvandal5});
+        break;
+      case "showengineve":
+        this.setState({showengineve: !this.state.showengineve});
+        break;
+      default:
+        break;      
+    }
+  }
+
   render() {
     var alternate_site = null;
     var xtra_header=null;
-    if (this.state.data.psuedonymurl !== "")
+    
+    if ( this.state.data.psuedonymurl)
     {
       alternate_site = (
-        <AlternateSite className='Section' data={this.state.data}></ AlternateSite>
+        this.state.showxtra ? <AlternateSite id='xtra' className='Section' data={this.state.data}></ AlternateSite> : null
       )
-      xtra_header = (<SectionHeader data={this.state.data} title="SCREENNAME.html" subtitle="Primary site is under my 'Nom de Dev'." />)
+      xtra_header = (<SectionHeader data={this.state.data} title="SCREENNAME.html" subtitle="Primary site is under my 'Nom de Dev'." 
+      parent_method={()=>{this.toggleComponent('showxtra')}} />)
     }
     var fullname = " " + this.state.data['firstname'] + this.state.data['namejoin'] + this.state.data['lastname']
     return (
       <div className="App">
+        
         <div className="TopBar">
         <img id="icon" src={icon} alt="icon" />
-          <div> {this.state.data.firstname}{this.state.data.namejoin}{this.state.data.lastname}
+          <div id="toptext"> {this.state.data.firstname}{this.state.data.namejoin}{this.state.data.lastname}
           </div>
         </div>
+        
         <div className='AppMain'>
-          <div className='SideBar'>Explorer</div>
+          <div className='SideBar'><Links data={this.state.data}/></div>
           <div className="AppBody">
+            
+            <SectionHeader title='aboutme.md' subtitle={fullname} file_symbol="i" data={this.state.data}
+            parent_method={()=>{this.toggleComponent('showaboutme')}} /> 
+            {this.state.showaboutme ? <AboutMe id="AboutMe" className='Section' data={this.state.data} /> : null}
+            
             {xtra_header}
             {alternate_site}
             
-            <SectionHeader title='aboutme.md' subtitle={fullname} file_symbol="i" data={this.state.data}/>
-            <AboutMe id="AboutMe" className='Section' data={this.state.data} />
-            
-            <SectionHeader title='HIRE_ME.pdf' subtitle="I'm > looking > for > work." file_symbol="$" data={this.state.data}/>
-            <Resume id="Resume" className='Section' data={this.state.data} />
+            <SectionHeader title='HIRE_ME.pdf' subtitle="I > am > looking > for > work." file_symbol="$" data={this.state.data}
+            parent_method={()=>{this.toggleComponent('showresume')}}/>
+            {this.state.showresume ? <Resume id="Resume" className='Section' data={this.state.data} />  : null}
 
-            <SectionHeader title='vandal5.py' subtitle="A game of DnD Auto-Chess" data={this.state.data}/>
-            <Vandal5 id="Vandal5" className='Section' data={this.state.data} />
+            <SectionHeader title='vandal5.py' subtitle="A game of DnD Auto-Chess" file_symbol="Py" data={this.state.data}  
+            parent_method={()=>{this.toggleComponent('showvandal5')}}/>
+            {this.state.showvandal5 ? <Vandal5 id="Vandal5" className='Section' data={this.state.data} /> : null}
 
-            <SectionHeader title='Engineve.py' subtitle="python > engine > for > DnD" data={this.state.data}/>
-            <EngineVe id="EngineVe" className='Section' data={this.state.data} />
-            
-            <SectionHeader title='Links.' subtitle="Find > me > on > the > web.html" data={this.state.data}/>
-            <Links id="Links" className='Section' data={this.state.data} />
+            <SectionHeader title='engineve.py' subtitle="python > engine > for > DnD" file_symbol="Py"  data={this.state.data}
+            parent_method={()=>{this.toggleComponent('showengineve')}}/>
+            {this.state.showengineve ? <EngineVe id="EngineVe" className='Section' data={this.state.data} /> : null}
             
           </div>
         </div>
