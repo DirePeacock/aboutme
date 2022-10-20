@@ -1,12 +1,15 @@
 {
     "firstname": "Dire",
     "lastname": "Peacock",
+    "namejoin":"",
     "email": "dire.d.peacock@gmail.com",
-    "aboutme": "lorem ipsum something something somewhere oh well whatever nevermind",
+    "aboutme": "oh well whatever nevermind",
     "locale": "Big Texas",
     "things": "",
     "links": {
         "twitter": "https://twitter.com/DirePeacock",
         "github": "https://github.com/DirePeacock"
-    }
+    },
+    "psuedonym":"direpeacock",
+    "psuedonymurl":"https://direpeacock.github.io/aboutme"
 }

@@ -13,5 +13,19 @@
             ],
             "program": "${workspaceFolder}\\src\\App.js"
         }
+        {
+            "name": "FFL",
+            "type": "firefox",
+            "request": "launch",
+            "reAttach": true,
+            "url": "localhost:3000/aboutme",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "pathMappings": [{
+                "url": "localhost:3000/aboutme",
+                "path": "${workspaceFolder}"
+            }]
+        }
     ]
 }

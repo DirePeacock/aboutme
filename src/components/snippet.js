@@ -7,7 +7,7 @@ class Snippet extends React.Component {
     render() {
         return (
             <div className="Snippet" >
-                <h3 className="SectionTitle">Snippet</h3>
+                <h4 className="SectionTitle">Snippet</h4>
                 <code>one two three four five six six six</code>
             </div>);
     }

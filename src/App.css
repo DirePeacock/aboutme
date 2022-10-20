@@ -1,8 +1,10 @@
 :root {
-  /* part monokai part vscode defaults */
+  /* part vscode defaults part monokai */
   --background: #1e1e1e;
   --menubackground: #252526;
   --headerbackground: #3c3c3c;
+  --leftbar: #333333;
+  --linecolor: #414141;
   --graytext: #8c8c8c;
   --foreground: #D4D4D4;
   --comment: #6A9955;
@@ -15,69 +17,120 @@
   --purple: #c586c0;
   --lightblue: #9cdcfe;
   --blue: #569CD6;
-  --teal: #4EC9AE;
+  --teal: #3ac9a2;
   --string: #CE9178;
   --yellow: #ffb517;
-  --brightyellow: #e5e510;
-
+  --brightyellow: #e5e510;  
 }
-
-pre {
-  text-align:left;
-  width:100%;
-}
-
 .App {
+  /* position: relative; */
+  background-color: var(--leftbar);
+  display: flex;
+  flex-direction: column;
   text-align: center;
   font-family: Consolas, monospace;
-
+  font-size: calc(11px + 0.5vmin);
+  color: var(--foreground);
+  
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#icon {
+  margin: 3px 3px 4px 4px;
+  position: flex;
+  left:0px;
+  align-self: flex-start;
+}
+
+.TopBar {
+  align-content: flex-start;
+  display: flex;
+  flex-direction: row;
+  background-color: var(--headerbackground);
+}
+.AppMain {
+  display: flex;
+  flex-direction: row;
+  
 }
 
 .comment {
   color: var(--comment);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.AppSection {
+  width: 95%;
+  border-left: 1px solid var(--linecolor);
 }
 
-.App-Body {
-  background-color: var(--background);
-  /* position: absolute; */
-  height: 100%;
-  width: 100%;
+.SideBar
+{
+  background-color: var(--leftbar);
+  position: sticky;
+  width:10%;
+  height: 100vmax;
+}
+
+.AppBody {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: var(--foreground);
-  top: 0;
+  background-color: var(--background);
+  width:90%;
+  top: 0px;
+  right:0px;
 }
 
-.Snippet {
+.TabSubtitle div {
+  margin: 0px 1vmin 0px 1vmin;
+  width: fit-content;
+  display: flex;
+  flex-direction: row;
+}
+.TabTopRow div {
+  margin: 1px 1vmin 1px 1vmin;
+  display: flex;
+  flex-direction: row;
+  
+}
+
+.FileSymbol
+{
+  padding: 0px 0vmin 0px 0px;
+  /* color: var(--blue); */
+}
+.TabTopRow {
+  padding: 0px 3vmin 0px 1vmin ;
+  width:fit-content;
+  display: flex;
+  flex-direction: row;
   background-color: var(--background);
   color: var(--foreground);
-  height: 100%;
+}
+.TabSubtitle {
+
+  margin: 0px;
+  padding: 0px 0vmin 1vmin 1vmin ;
+  background-color: var(--background);
+  display: flex;
+  flex-direction: row;
+  width:auto;
+}
+
+.SectionHeader
+{
+  border-top: 1px solid var(--linecolor);
+  background-color: var(--menubackground);
+  color: var(--graytext);
+  justify-content: left;
+  text-align: left;
   width: 100%;
 }
-
-.SectionSubtitle {
-  color: var(--string);
-}
-
 .SectionBody {
-  padding-left: 10%;
+  padding: 0px 0px 4vmin 2vmin;
+
   text-align: left;
-  width: 80%;
-  font-size: large;
+  width: 95%;
   word-wrap: normal;
 }
 
@@ -88,6 +141,20 @@ pre {
   overflow: visible;
 }
 
+.Minimize {
+  background-color: transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+  color: var(--foreground);
+}
+.Minimize:hover {
+  background-color: var(--leftbar);
+  border-radius: 19%;  
+}
+
 .App-link {
   color: var(--blue);
 }
@@ -95,8 +162,9 @@ pre {
 .CodePreview {
   object-position: inherit;
   width: 80%;
-  font-size: 2vmin;
+  /* font-size: 2vmin; */
   line-height: 1.05;
+  border-radius: 2vmin;
 }
 
 #YoutubeDemo {
@@ -112,4 +180,49 @@ pre {
   margin: auto;
   color: var(--foreground);
   padding: 0.7rem 2rem;
+}
+
+#Tower {
+  /* background-color: var(--background); */
+  text-align: unset;
+  position: Absolute;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  width: auto;
+  z-index: -1;
+  background-color: var(--blue);
+}
+
+
+#Tower img {
+  position: sticky;
+  height: 100%;
+  width: 256px;
+  
+}
+pre {
+  text-align:left;
+  width:100%;
+  
+}
+.Snippet {
+  background-color: var(--background);
+  color: var(--foreground);
+  height: 100%;
+  width: 100%;
+}
+
+/* unused? */
+.SectionTitle {
+  margin: 3vmin 0px 2vmin 0px;
+  background-color: var(--background);
+  color: var(--graytext);
+}
+
+.SectionSubtitle {
+  color: var(--string);
+  background-color: var(--background);
+  width:100%;
+  margin: 2vmin 0px 2vmin 0px
 }
