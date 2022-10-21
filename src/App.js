@@ -8,7 +8,6 @@ import Links from './components/links';
 import AlternateSite from './components/alternatesite';
 import React from 'react';
 import personalvars from './personalvars.json';
-import resumedata from './resume.json';
 import SectionHeader from './components/sectionheader.js';
 
 class App extends React.Component {
@@ -16,7 +15,6 @@ class App extends React.Component {
     super(props);
     this.state = {
       data: personalvars,
-      resumedata: resumedata,
       showaboutme: true,
       showresume: true,
       showxtra: true,

@@ -1,11 +1,7 @@
 import React from "react";
-import resumedata from '../resume.json';
 import resumepdf from '../dp2022Resume.pdf';
+
 class Resume extends React.Component {
-    constructor(props) {
-        super(props);
-        this.resume = resumedata
-    }
     render() {
         var pdflink = '' + {resumepdf} + '#view=FitH'
         return (
