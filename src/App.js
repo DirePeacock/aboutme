@@ -62,7 +62,9 @@ class App extends React.Component {
       xtra_header = (<SectionHeader data={this.state.data} title="SCREENNAME.html" subtitle="Primary site is under my 'Nom de Dev'." 
       parent_method={()=>{this.toggleComponent('showxtra')}} />)
     }
+    
     var fullname = " " + this.state.data['firstname'] + this.state.data['namejoin'] + this.state.data['lastname']
+    
     return (
       <div className="App">
         
@@ -80,13 +82,13 @@ class App extends React.Component {
             parent_method={()=>{this.toggleComponent('showaboutme')}} /> 
             {this.state.showaboutme ? <AboutMe id="AboutMe" className='Section' data={this.state.data} /> : null}
             
-            {xtra_header}
-            {alternate_site}
-            
             <SectionHeader title='HIRE_ME.pdf' subtitle="I > am > looking > for > work." file_symbol="$" data={this.state.data}
             parent_method={()=>{this.toggleComponent('showresume')}}/>
             {this.state.showresume ? <Resume id="Resume" className='Section' data={this.state.data} />  : null}
 
+            {xtra_header}
+            {alternate_site}
+            
             <SectionHeader title='vandal5.py' subtitle="A game of DnD Auto-Chess" file_symbol="Py" data={this.state.data}  
             parent_method={()=>{this.toggleComponent('showvandal5')}}/>
             {this.state.showvandal5 ? <Vandal5 id="Vandal5" className='Section' data={this.state.data} /> : null}

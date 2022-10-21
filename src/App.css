@@ -117,7 +117,7 @@ a:visited {
   align-items: left;
   justify-content: flex-start;
   background-color: var(--background);
-  width:90%;
+  width:fit-content;
   top: 0px;
   right:0px;
 }
@@ -227,6 +227,12 @@ pre {
 
 p {
   margin: 0px;
+}
+#ResumePDF
+{
+  position:relative;
+  width:100%;
+  min-height: 97vmin;
 }
 
 :root {
