@@ -17,10 +17,10 @@ const solaire_yaml=
   speed:
     land: 30
   experience: 1234
-  languages: common, minos
+  languages: Common, Minos
   game_moves:
     longsword:
-      parent_move: 'Longsword'
+      parent_move: 'BasicAttack'
       dmg_dice: '1d8'
       stat: 'str'
 `;
